@@ -13,21 +13,13 @@ type GetPostsActionParams = {
 };
 
 export async function getPostsAction(params: GetPostsActionParams) {
-  const { page, tag, category } = params;
-
-  let response: PostListResponse
-
   try {
-    if (category) {
-      response = await getPostsByCategory({ page, category });
-    }
+    const response: PostListResponse = await handleResponse(params);
 
-    if (tag) {
-      response = await getPostsByTag({ page, tag });
-    }
-
-    if (!category && !tag) {
-      response = await getAllPosts({ page });
+    if ("error" in response) {
+      throw new Error("Error ao carregar as postagens", {
+        cause: response.error,
+      });
     }
 
     const sanitizedPosts = sanitizePostsList(response!.posts);
@@ -38,15 +30,26 @@ export async function getPostsAction(params: GetPostsActionParams) {
         currentPage: response!.pagination.currentPage,
         totalPages: response!.pagination.totalPages,
       },
+      cause: null,
     }
-  } catch {
+  } catch (error: unknown) {
     return {
       posts: [],
       pagination: {
         currentPage: 1,
         totalPages: 1,
       },
+      cause: (error as Error).cause as string,
     }
   }
 }
 
+function handleResponse(params: GetPostsActionParams) {
+  if (params.tag) {
+    return getPostsByTag({ page: params.page, tag: params.tag });
+  }
+  if (params.category) {
+    return getPostsByCategory({ page: params.page, category: params.category });
+  }
+  return getAllPosts({ page: params.page });
+}

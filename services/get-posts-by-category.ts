@@ -1,3 +1,4 @@
+import "server-only";
 import { POST_LIMIT, POST_REVALIDATE_TIME, POST_TAG } from "@/constants/posts";
 import type { PostListResponse } from "@/types/post.list";
 

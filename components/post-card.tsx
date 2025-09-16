@@ -23,6 +23,7 @@ export function PostCard({
           src={imageUrl}
           alt={title}
           priority
+          fetchPriority="high"
           width={400}
           height={300}
           className="row-start-1 row-end-2 col-start-1 col-end-2"
