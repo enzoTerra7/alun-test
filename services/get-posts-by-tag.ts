@@ -1,21 +1,21 @@
 import { POST_LIMIT, POST_REVALIDATE_TIME, POST_TAG } from "@/constants/posts";
 import type { PostListResponse } from "@/types/post.list";
 
-type GetPostsByCategoryFilters = {
-  category: string;
+type GetPostsByTagFilters = {
+  tag: string;
   page?: number;
 };
 
-export async function getPostsByCategory(filters: GetPostsByCategoryFilters) {
-  const { page, category } = filters;
+export async function getPostsByTag(filters: GetPostsByTagFilters) {
+  const { page, tag } = filters;
 
   const queryString = new URLSearchParams(`limit=${POST_LIMIT}`);
   if (page) queryString.set("page", page.toString());
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/category/${category}?${queryString}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/tags/${tag.toLowerCase()}/?${queryString}`, {
     next: {
       revalidate: POST_REVALIDATE_TIME,
-      tags: [POST_TAG, category],
+      tags: [POST_TAG, tag],
     }
   });
   const data = await response.json();

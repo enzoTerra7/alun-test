@@ -11,6 +11,8 @@
   --primary-foreground: #ffffff;
   --foreground: #6e859f;
   --button-disabled: #9d9d9d;
+  --destructive: #c50b0b;
+  --destructive-foreground: #ffffff;
 
   --font-chakra-petch: "Chakra Petch", sans-serif;
   --font-inter: Inter, sans-serif;
@@ -34,6 +36,8 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-button-disabled: var(--button-disabled);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --font-inter: var(--font-inter);
   --font-chakra-petch: var(--font-chakra-petch);
 }

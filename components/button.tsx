@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentProps } from "react";
 
 export const buttonVariants = cva(
-  "rounded-sm h-10 text-base font-bold inline-flex gap-x-2 px-3 py-2 items-center justify-center transition-colors duration-200 disabled:cursor-not-allowed disabled:bg-button-disabled disabled:border-button-disabled",
+  "rounded-sm h-10 text-base font-bold inline-flex gap-x-2 px-3 py-2 items-center justify-center transition-colors duration-200 disabled:cursor-not-allowed disabled:bg-button-disabled disabled:border-button-disabled cursor-pointer",
   {
     variants: {
       variant: {
@@ -14,6 +14,8 @@ export const buttonVariants = cva(
           "bg-background text-primary hover:bg-primary/10 border border-primary",
         pagination:
           "bg-button-disabled text-white disabled:bg-secondary disabled:text-secondary-foreground",
+        destructive:
+          "border border-destructive text-destructive hover:bg-destructive/10 disabled:bg-button-disabled disabled:text-white",
       },
     },
   }

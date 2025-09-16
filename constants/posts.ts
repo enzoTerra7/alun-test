@@ -5,3 +5,34 @@ export const POST_LIMIT_BLOG_VIEW = 12;
 export const POST_REVALIDATE_TIME = 60;
 
 export const POST_TAG = "posts";
+
+export const POST_ALLOWED_CATEGORIES_FILTER = [
+  {
+    slug: "mobile",
+    label: "Mobile",
+  },
+  {
+    slug: "programacao",
+    label: "Programação",
+  },
+  {
+    slug: "frontend",
+    label: "Frontend",
+  },
+  {
+    slug: "devops",
+    label: "DevOps",
+  },
+  {
+    slug: "ux-design",
+    label: "UX & Design",
+  },
+  {
+    slug: "data-science",
+    label: "Data Science",
+  },
+  {
+    slug: "inovacao-gestao",
+    label: "Inovação & Gestão",
+  }
+];
