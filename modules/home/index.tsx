@@ -3,6 +3,7 @@ import { getPostsAction } from "./action";
 import { PostList } from "./post.list";
 import { PostsFallback } from "./posts.fallback";
 import { HomePageFooter } from "./footer";
+import { Hero } from "./hero";
 
 export async function Home({ searchParams }: PageProps<"/">) {
   const params = await searchParams;
@@ -15,7 +16,8 @@ export async function Home({ searchParams }: PageProps<"/">) {
 
   return (
     <div>
-      <h1>Home</h1>
+      <Hero />
+      {/* <section className="hero-bg"></section> */}
       <Suspense fallback={<PostsFallback />}>
         <PostList fetchPosts={fetchPosts} />
       </Suspense>

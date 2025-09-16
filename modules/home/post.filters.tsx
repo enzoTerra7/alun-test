@@ -46,9 +46,9 @@ export function PostFilters() {
   }
 
   return (
-    <div className="w-full flex items-center justify-between gap-x-4">
-      <div className="flex items-center gap-x-8">
-        <h1 className="font-chakra-petch text-secondary text-2xl font-bold">
+    <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4">
+      <div className="flex flex-col gap-y-2 md:flex-row md:justify-between md:w-full lg:w-auto items-center gap-x-8 max-w-full">
+        <h1 className="font-chakra-petch text-secondary text-xl md:text-2xl font-bold">
           Minha postagens
         </h1>
         <SearchFilter
@@ -113,11 +113,11 @@ function CategoryFilter({
     return null;
   }
   return (
-    <div className="flex items-center gap-x-8">
-      <p className="font-chakra-petch text-secondary text-2xl font-bold">
+    <div className="flex flex-col gap-y-2 md:flex-row items-center gap-x-8 max-w-full">
+      <p className="font-chakra-petch text-secondary text-2xl font-bold shrink-0">
         Categorias
       </p>
-      <div className="flex items-center gap-x-4 max-w-[17.25rem] overflow-x-auto [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300">
+      <div className="flex items-center flex-1 gap-x-4 max-w-full lg:max-w-[17.25rem] overflow-x-auto [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300">
         {CATEGORY_LIST.map((ctg) => (
           <Button
             key={ctg.slug}

@@ -28,12 +28,12 @@ const FOOTER_CONTACT_ITEMS = [
 
 export function HomePageFooter() {
   return (
-    <div className="grid grid-cols-3 gap-x-8">
-      <div className="flex flex-col col-span-2 w-fit gap-y-3">
-        <p className="text-primary text-base font-chakra-petch font-bold">
+    <div className="grid md:grid-cols-3 gap-x-8 gap-y-4 mt-12 mb-8 md:mt-32 md:mb-16">
+      <div className="flex flex-col col-span-2 w-fit md:gap-y-3">
+        <p className="text-primary text-xs md:text-base font-chakra-petch font-bold">
           Vamos conversar?
         </p>
-        <p className="text-secondary text-6xl font-chakra-petch font-bold">
+        <p className="text-secondary text-2xl md:text-4xl xl:text-6xl font-chakra-petch font-bold">
           Entre em contato
         </p>
       </div>
@@ -64,7 +64,7 @@ function FooterContactItem({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-foreground text-base font-normal underline"
+        className="text-foreground text-xs md:text-base font-normal underline"
       >
         {label}
       </a>

@@ -40,6 +40,8 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --font-inter: var(--font-inter);
   --font-chakra-petch: var(--font-chakra-petch);
+
+  --container-8xl: 84.6875rem;
 }
 
 @layer base {
@@ -48,5 +50,12 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .hero-bg {
+    background-image: url("/mock/bg-colors.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }

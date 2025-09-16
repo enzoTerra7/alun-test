@@ -15,7 +15,7 @@ export function NavigationItem({
       <Link
         href={href}
         className={cn(
-          "font-chakra-petch text-2xl font-bold",
+          "font-chakra-petch text-lg md:text-2xl font-bold",
           isCurrent ? "text-primary pointer-events-none" : "text-secondary"
         )}
       >
