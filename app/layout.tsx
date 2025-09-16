@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${chakraPetch.variable} antialiased p-4 lg:py-14 xl:pt-[4.5rem]`}
+        className={`${inter.variable} ${chakraPetch.variable} antialiased px-4 pb-[1.1875rem] pt-4 xl:pt-[4.5rem]`}
       >
         <ContentWrapper>
           <Header />
