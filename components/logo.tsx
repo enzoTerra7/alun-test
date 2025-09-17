@@ -33,7 +33,7 @@ export function Logotype(props: Omit<ComponentProps<"h5">, "children">) {
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <div className={cn("flex items-center gap-5", className)}>
+    <div className={cn("flex items-center gap-x-2 md:gap-x-5", className)}>
       <LogoMark />
       <Logotype />
     </div>

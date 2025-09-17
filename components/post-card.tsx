@@ -20,7 +20,7 @@ export function PostCard({
   id,
 }: PostCard) {
   return (
-    <div className="flex flex-col gap-[1.625rem] border border-primary rounded-sm p-6 bg-background transition-shadow duration-200 hover:shadow-lg hover:shadow-primary/50">
+    <div className="flex flex-col gap-[1.625rem] border border-primary rounded-sm p-6 bg-card transition-shadow duration-200 hover:shadow-lg hover:shadow-primary/50">
       <div className="grid place-items-end place-content-end grid-cols-1 grid-rows-1">
         <Image
           src={imageUrl}

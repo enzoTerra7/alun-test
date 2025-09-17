@@ -4,6 +4,7 @@ import "./globals.css";
 import { ContentWrapper } from "@/components/content-wrapper";
 import { Header } from "@/layout/header";
 import { Footer } from "@/layout/footer";
+import { ThemeProvider } from "@/contexts/theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,15 +28,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${chakraPetch.variable} antialiased px-4 pb-[1.1875rem] pt-4 md:px-8 md:pt-8 xl:pt-[4.5rem] hero-bg`}
       >
-        <ContentWrapper>
-          <Header />
-          {children}
-          <Footer />
-        </ContentWrapper>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ContentWrapper>
+            <Header />
+            {children}
+            <Footer />
+          </ContentWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

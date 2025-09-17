@@ -4,6 +4,8 @@ import { PostContent } from "./post.content";
 import { PostContentFallback } from "./post.content.fallback";
 import { CorrelatedPosts } from "./correlated-posts";
 import { CorrelatedPostsFallback } from "./correlated-posts.fallback";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import { CorrelatedPostError } from "./correlated-posts.error";
 
 export async function PostPage({
   params,
@@ -21,9 +23,11 @@ export async function PostPage({
       <Suspense fallback={<PostContentFallback />}>
         <PostContent fetchPostDetails={fetchPostDetails} />
       </Suspense>
-      <Suspense fallback={<CorrelatedPostsFallback />}>
-        <CorrelatedPosts fetchCorrelatedPosts={fetchCorrelatedPosts} />
-      </Suspense>
+      <ErrorBoundary errorComponent={CorrelatedPostError}>
+        <Suspense fallback={<CorrelatedPostsFallback />}>
+          <CorrelatedPosts fetchCorrelatedPosts={fetchCorrelatedPosts} />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }

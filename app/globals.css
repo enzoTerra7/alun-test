@@ -14,6 +14,8 @@
   --destructive: #c50b0b;
   --destructive-foreground: #ffffff;
 
+  --card: #ffffff;
+
   --font-chakra-petch: "Chakra Petch", sans-serif;
   --font-inter: Inter, sans-serif;
 }
@@ -21,11 +23,13 @@
 .dark {
   --primary: #1ca7c8;
   --primary-foreground: #ffffff;
-  --background: #0a0a0a;
+  --background: #010316;
   --foreground: #dae0e6;
-  --secondary: #284260;
+  --secondary: #436fa2;
   --secondary-foreground: #ffffff;
-  --button-disabled: #e6e6e6;
+  --button-disabled: #acacac;
+
+  --card: #121518;
 }
 
 @theme inline {
@@ -40,7 +44,7 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --font-inter: var(--font-inter);
   --font-chakra-petch: var(--font-chakra-petch);
-
+  --color-card: var(--card);
   --container-8xl: 84.6875rem;
 }
 

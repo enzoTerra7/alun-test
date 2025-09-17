@@ -1,3 +1,4 @@
+import { cn } from "@/helpers/styles";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentProps } from "react";
 
@@ -11,7 +12,7 @@ export const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/90 disabled:bg-button-disabled border border-secondary",
         outline:
-          "bg-background text-primary hover:bg-primary/10 border border-primary",
+          "bg-transparent text-primary hover:bg-primary/10 border border-primary",
         pagination:
           "bg-button-disabled text-white disabled:bg-secondary disabled:text-secondary-foreground",
         destructive:
@@ -27,6 +28,6 @@ export function Button({
   ...props
 }: ComponentProps<"button"> & VariantProps<typeof buttonVariants>) {
   return (
-    <button className={buttonVariants({ variant, className })} {...props} />
+    <button className={cn(buttonVariants({ variant }), className)} {...props} />
   );
 }
