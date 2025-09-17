@@ -5,6 +5,7 @@ export const POST_LIMIT_BLOG_VIEW = 12;
 export const POST_REVALIDATE_TIME = 60;
 
 export const POST_TAG = "posts";
+export const POST_DETAILS_TAG = "post-details";
 
 export const POST_ALLOWED_CATEGORIES_FILTER = [
   {
