@@ -5,7 +5,15 @@ import { PostsFallback } from "./posts.fallback";
 import { HomePageFooter } from "./footer";
 import { Hero } from "./hero";
 
-export async function Home({ searchParams }: PageProps<"/">) {
+export async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    page?: string;
+    tag?: string;
+    category?: string;
+  }>;
+}) {
   const params = await searchParams;
 
   const page = params.page ? parseInt(params.page as string) : 1;
@@ -15,13 +23,12 @@ export async function Home({ searchParams }: PageProps<"/">) {
   const fetchPosts = getPostsAction({ page, tag, category });
 
   return (
-    <div>
+    <>
       <Hero />
-      {/* <section className="hero-bg"></section> */}
       <Suspense fallback={<PostsFallback />}>
         <PostList fetchPosts={fetchPosts} />
       </Suspense>
       <HomePageFooter />
-    </div>
+    </>
   );
 }

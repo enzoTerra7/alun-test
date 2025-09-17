@@ -5,12 +5,13 @@ import type { PostListResponse } from "@/types/post.list";
 type GetPostsByCategoryFilters = {
   category: string;
   page?: number;
+  limit?: number;
 };
 
 export async function getPostsByCategory(filters: GetPostsByCategoryFilters) {
-  const { page, category } = filters;
+  const { page, category, limit = POST_LIMIT } = filters;
 
-  const queryString = new URLSearchParams(`limit=${POST_LIMIT}`);
+  const queryString = new URLSearchParams(`limit=${limit}`);
   if (page) queryString.set("page", page.toString());
 
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/category/${category}?${queryString}`, {

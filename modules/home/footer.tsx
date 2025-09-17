@@ -28,8 +28,8 @@ const FOOTER_CONTACT_ITEMS = [
 
 export function HomePageFooter() {
   return (
-    <div className="grid md:grid-cols-3 gap-x-8 gap-y-4 mt-12 mb-8 md:mt-32 md:mb-16">
-      <div className="flex flex-col col-span-2 w-fit md:gap-y-3">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 mt-12 mb-8 md:mt-32 md:mb-16">
+      <div className="flex flex-col lg:col-span-2 w-fit md:gap-y-3">
         <p className="text-primary text-xs md:text-base font-chakra-petch font-bold">
           Vamos conversar?
         </p>

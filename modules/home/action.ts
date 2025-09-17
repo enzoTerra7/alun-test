@@ -1,7 +1,7 @@
 "use server";
 
 import { getAllPosts } from "@/services/get-all-posts";
-import { sanitizePostsList } from "./sanitizer";
+import { sanitizePostsList } from "../../sanitizers/post-list";
 import type { PostListResponse } from "@/types/post.list";
 import { getPostsByCategory } from "@/services/get-posts-by-category";
 import { getPostsByTag } from "@/services/get-posts-by-tag";

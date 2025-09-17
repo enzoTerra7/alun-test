@@ -6,7 +6,10 @@ export function sanitizePostsList(posts: PostListResponse["posts"]) {
     title: post.title,
     description: post.content,
     imageUrl: post.imageUrl,
-    category: post.category.name,
+    category: {
+      slug: post.category.slug,
+      name: post.category.name,
+    },
   }));
 }
 

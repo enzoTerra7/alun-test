@@ -5,7 +5,10 @@ type PostCard = {
   title: string;
   description: string;
   imageUrl: string;
-  category: string;
+  category: {
+    slug: string;
+    name: string;
+  };
   id: string;
 };
 
@@ -18,7 +21,7 @@ export function PostCard({
 }: PostCard) {
   return (
     <div className="flex flex-col gap-[1.625rem] border border-primary rounded-sm p-6 bg-background transition-shadow duration-200 hover:shadow-lg hover:shadow-primary/50">
-      <div className="grid place-items-end place-content-end">
+      <div className="grid place-items-end place-content-end grid-cols-1 grid-rows-1">
         <Image
           src={imageUrl}
           alt={title}
@@ -26,11 +29,11 @@ export function PostCard({
           fetchPriority="high"
           width={400}
           height={300}
-          className="row-start-1 row-end-2 col-start-1 col-end-2"
+          className="row-start-1 row-end-2 object-cover col-start-1 col-end-2 w-full object-center"
         />
         <div className="row-start-1 row-end-2 col-start-1 col-end-2 w-full max-w-[9.375rem] h-[1.875rem] bg-primary content-center">
           <p className="text-primary-foreground text-sm font-normal text-center">
-            {category}
+            {category.name}
           </p>
         </div>
       </div>
@@ -41,7 +44,7 @@ export function PostCard({
         {description}
       </p>
       <Link
-        href={`/blog/${id}`}
+        href={`/blog/${id}?category=${category.slug}`}
         className="text-primary text-base font-bold w-fit"
       >
         Ler mais
