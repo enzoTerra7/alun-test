@@ -14,7 +14,7 @@ Como um dos focos do projeto é acessibilidade, foquei bastante em ferramentas p
 
 # Dificuldades
 
-- **Gradiente**: Tive uma dificuldade na implementação do gradiente no fundo da página, fiquei buscando melhor maneiras para isso, se devia ser uma tag de imagem no fundo, se aplicava com background-image, se fazia isso no body, no content-wrapper, no componente da hero, etc. Acabou que não ficou muito bacana em nenhuma das abordagens que tentei.
+- **Gradiente**: Tive uma dificuldade na implementação do gradiente no fundo da página, fiquei buscando melhores maneiras para fazê-lo, se devia ser uma tag de imagem no fundo, se aplicava com background-image, se fazia isso no body, no content-wrapper, no componente da hero, etc. Acabou que não ficou muito bacana em nenhuma das abordagens que tentei.
 
 # Rodar o projeto
 

@@ -1,3 +1,4 @@
+import { cn } from "@/helpers/styles";
 import {
   GithubIcon,
   LinkedinIcon,
@@ -8,20 +9,35 @@ import {
 const FOOTER_CONTACT_ITEMS = [
   {
     Icon: MailIcon,
-    label: "fernandamascheti@gmail.com",
-    url: "mailto:fernandamascheti@gmail.com",
+    children: "fernandamascheti@gmail.com",
     ariaLabel: "Ícone de um envelope representando um email",
   },
   {
     Icon: LinkedinIcon,
-    label: "Fernanda Mascheti",
-    url: "https://www.linkedin.com/in/fernandamascheti/",
+    children: (
+      <a
+        href="https://www.linkedin.com/in/fernandamascheti/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline"
+      >
+        /Fernanda Mascheti
+      </a>
+    ),
     ariaLabel: "Ícone de um linkedin representando um perfil de linkedin",
   },
   {
     Icon: GithubIcon,
-    label: "fernandamascheti",
-    url: "https://github.com/enzoTerra7",
+    children: (
+      <a
+        href="https://github.com/enzoTerra7"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline"
+      >
+        /Fernanda Mascheti
+      </a>
+    ),
     ariaLabel: "Ícone de um github representando um perfil de github",
   },
 ];
@@ -38,8 +54,8 @@ export function HomePageFooter() {
         </p>
       </div>
       <ul className="flex flex-col gap-y-3">
-        {FOOTER_CONTACT_ITEMS.map((item) => (
-          <FooterContactItem key={item.label} {...item} />
+        {FOOTER_CONTACT_ITEMS.map((item, index) => (
+          <FooterContactItem key={`${item.children}-${index}`} {...item} />
         ))}
       </ul>
     </div>
@@ -48,26 +64,26 @@ export function HomePageFooter() {
 
 function FooterContactItem({
   Icon,
-  label,
-  url,
   ariaLabel,
+  children,
+  className,
 }: {
   Icon: LucideIcon;
-  label: string;
-  url: string;
   ariaLabel: string;
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <li className="flex items-center gap-x-2">
       <Icon className="size-6 text-primary" aria-label={ariaLabel} />
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-foreground text-xs md:text-base font-normal underline"
+      <p
+        className={cn(
+          "text-foreground text-xs md:text-base font-normal",
+          className
+        )}
       >
-        {label}
-      </a>
+        {children}
+      </p>
     </li>
   );
 }
