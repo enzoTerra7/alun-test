@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Bem vindo pessoal da Alun!
 
-## Getting Started
+# Sobre a estrutura das pastas
 
-First, run the development server:
+Optei por essa estrutura pois acho que, como é um projeto curto, não demandava nada mais estruturado, acho que essa estrutura que segui mantém o projeto limpo e legível, com fácil acesso ao conteúdo.
+Cogitei fazer uma estrutura mais elaborada como uma por camadas, mas seria demais, não se fazia necessário tanta abstração. Daí cogitei por modules, criando uma pasta core, com common e etc, mas não teria módulos suficiente para fazer uma boa segregação, então acabou que seria demais também.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Arquitetura
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Meu planejamento foi simples, manter o que se repete no layout (header e footer).
+As páginas seguem em tese a mesma estrutura: se for conteúdo estático, vai para server render, senão eu uso o suspense, com um fallback nessa parte que deve fazer a request, passando isso então para o client side.
+As request passam por uma action, que é responsável por cuidar da lógica e chamar os services (que fazem apenas os fetchs), e manda para um sanitizer para retorna apenas o que eu preciso.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Bibliotecas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Evitei ao máximo instalar bibliotecas externas, acho que, como é um teste, é interessante eu mostrar o que consigo fazer de forma "cru", sem nada extra para auxiliar, então por isso instalei pouquíssimas bibliotecas:
 
-## Learn More
+- **tw-animate-css**: Adiciona animações já prontas para tailwind, adicionei para o skeleton;
+- **tailwind-merge & clsx**: Para fazer o melhor helper pro tailwind;
+- **use-debounce**: Esse fiquei com pé atrás para instalar. Cogitei fazer o debounce do filtro de busca apenas com o useDefferedValue, mas no fim desisti e optei por instalar essa biblioteca, que é bem leve;
+- **cva**: Para criar as variantes de botões, é uma biblioteca bem leve;
+- **lucide-react**: Para ícones;
+- **next-themes**: Para tema dark/light.
 
-To learn more about Next.js, take a look at the following resources:
+# Dificuldades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tive dificuldade para implementar o gradiente no fundo da página. Mas de resto achei bem tranquilo o teste, espero muito que gostem!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Rodar o projeto
 
-## Deploy on Vercel
+Padrão, usa o:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm i`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+e depois
+
+`npm run dev`
+
+ou
+
+`npm run build && npm run start`

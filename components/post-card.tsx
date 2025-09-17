@@ -37,9 +37,9 @@ export function PostCard({
           </p>
         </div>
       </div>
-      <h5 className="text-secondary font-chakra-petch text-xl font-bold text-balance line-clamp-2">
+      <p className="text-secondary font-chakra-petch text-xl font-bold text-balance line-clamp-2">
         {title}
-      </h5>
+      </p>
       <p className="text-foreground text-sm font-normal line-clamp-3">
         {description}
       </p>

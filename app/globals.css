@@ -57,7 +57,7 @@
   }
 
   .hero-bg {
-    background-image: url("/mock/bg-colors.png");
+    background-image: url("/mock/bg-colors.svg");
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;

@@ -9,7 +9,7 @@ export const navigationConfig: NavigationConfig[] = [
     label: "Início",
   },
   {
-    href: "/blog",
+    href: "#",
     label: "Blog",
   },
 ];
