@@ -113,11 +113,11 @@ function CategoryFilter({
     return null;
   }
   return (
-    <div className="flex flex-col gap-y-2 md:flex-row items-center gap-x-8 max-w-full">
+    <div className="flex flex-col gap-y-2 md:flex-row items-center justify-between gap-x-8 w-full lg:w-fit">
       <p className="font-chakra-petch text-secondary text-2xl font-bold shrink-0">
         Categorias
       </p>
-      <div className="flex items-center flex-1 gap-x-4 max-w-full lg:max-w-[17.25rem] overflow-x-auto [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300">
+      <div className="flex items-center gap-x-4 max-w-full overflow-x-auto">
         {CATEGORY_LIST.map((ctg) => (
           <Button
             key={ctg.slug}

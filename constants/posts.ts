@@ -20,20 +20,4 @@ export const POST_ALLOWED_CATEGORIES_FILTER = [
     slug: "frontend",
     label: "Frontend",
   },
-  {
-    slug: "devops",
-    label: "DevOps",
-  },
-  {
-    slug: "ux-design",
-    label: "UX & Design",
-  },
-  {
-    slug: "data-science",
-    label: "Data Science",
-  },
-  {
-    slug: "inovacao-gestao",
-    label: "Inovação & Gestão",
-  }
 ];
