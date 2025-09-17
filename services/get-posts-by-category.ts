@@ -1,6 +1,7 @@
 import "server-only";
 import { POST_LIMIT, POST_REVALIDATE_TIME, POST_TAG } from "@/constants/posts";
 import type { PostListResponse } from "@/types/post.list";
+import { API_URL } from "@/constants/api";
 
 type GetPostsByCategoryFilters = {
   category: string;
@@ -14,7 +15,7 @@ export async function getPostsByCategory(filters: GetPostsByCategoryFilters) {
   const queryString = new URLSearchParams(`limit=${limit}`);
   if (page) queryString.set("page", page.toString());
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/category/${category}?${queryString}`, {
+  const response = await fetch(`${API_URL}/posts/category/${category}?${queryString}`, {
     next: {
       revalidate: POST_REVALIDATE_TIME,
       tags: [POST_TAG, category],

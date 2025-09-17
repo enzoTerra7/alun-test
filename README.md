@@ -5,11 +5,15 @@
 Optei por essa estrutura pois acho que, como é um projeto curto, não demandava nada mais estruturado, acho que essa estrutura que segui mantém o projeto limpo e legível, com fácil acesso ao conteúdo.
 Cogitei fazer uma estrutura mais elaborada como uma por camadas, mas seria demais, não se fazia necessário tanta abstração. Daí cogitei por modules, criando uma pasta core, com common e etc, mas não teria módulos suficiente para fazer uma boa segregação, então acabou que seria demais também.
 
+Para mais detalhes, ver arquivo **PROJETO_ESTRUTURA.md**
+
 # Arquitetura
 
 Meu planejamento foi simples, manter o que se repete no layout (header e footer).
 As páginas seguem em tese a mesma estrutura: se for conteúdo estático, vai para server render, senão eu uso o suspense, com um fallback nessa parte que deve fazer a request, passando isso então para o client side.
 As request passam por uma action, que é responsável por cuidar da lógica e chamar os services (que fazem apenas os fetchs), e manda para um sanitizer para retorna apenas o que eu preciso.
+
+Para mais detalhes, ver arquivo **PROJETO_ESTRUTURA.md**
 
 # Bibliotecas
 

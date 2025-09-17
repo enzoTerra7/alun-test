@@ -22,13 +22,13 @@ export async function getPostsAction(params: GetPostsActionParams) {
       });
     }
 
-    const sanitizedPosts = sanitizePostsList(response!.posts);
+    const sanitizedPosts = sanitizePostsList(response.posts);
 
     return {
       posts: sanitizedPosts,
       pagination: {
-        currentPage: response!.pagination.currentPage,
-        totalPages: response!.pagination.totalPages,
+        currentPage: response.pagination.currentPage,
+        totalPages: response.pagination.totalPages,
       },
       cause: null,
     }
